@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default measurement for measurement units preference [CHAR LIMIT=NONE] -->
+    <integer name="pref_measurement_default" translatable="false">1</integer>
+</resources>
