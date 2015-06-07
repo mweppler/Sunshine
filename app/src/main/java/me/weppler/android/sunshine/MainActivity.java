@@ -40,6 +40,12 @@ public class MainActivity extends ActionBarActivity {
         } else if (id == R.id.action_map) {
             openPreferredLocationInMap();
             return true;
+        } else if (id == R.id.action_share) {
+            Intent sendIntent = new Intent();
+            sendIntent.setAction(Intent.ACTION_SEND);
+            sendIntent.putExtra(Intent.EXTRA_TEXT, "yo mama");
+            sendIntent.setType("text/plain");
+            startActivity(Intent.createChooser(sendIntent, "share to:"));
         }
         return super.onOptionsItemSelected(item);
     }
