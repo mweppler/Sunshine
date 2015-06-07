@@ -31,9 +31,10 @@ public class DetailActivityFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.menu_detail_fragment, menu);
         MenuItem item = menu.findItem(R.id.action_share);
-        ShareActionProvider shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(item);
+        ShareActionProvider shareActionProvider = new ShareActionProvider(getActivity());
         if (shareActionProvider != null) {
             shareActionProvider.setShareIntent(createShareForecastIntent());
+            MenuItemCompat.setActionProvider(item, shareActionProvider);
         } else {
             Log.d(TAG, "Share Action Provider is null?");
         }
